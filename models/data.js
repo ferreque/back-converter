@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const productSchema = new Schema({
+const dataSchema = new Schema({
   id: String,
   inputValor: String,
   uniti2: String,
@@ -9,5 +9,5 @@ const productSchema = new Schema({
   uniti: String,
 });
 
-const Product = mongoose.model("products", productSchema);
-module.exports = Product;
+const Data = mongoose.model("dalta", dataSchema);
+module.exports = Data;
