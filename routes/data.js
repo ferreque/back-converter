@@ -3,7 +3,7 @@ const Data = require("../models/data");
 
 router
   .get("/all", async (req, res) => {
-    console.log("GET /datas/all");
+    console.log("GET /data/all");
     try {
       const allData = await Data.find();
       res.status(200).send(allData);
