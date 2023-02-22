@@ -20,9 +20,8 @@ const Conversion = require("./Models/conversions");
 
 app.route("/").get(async (req, res) => {
   try {
-    res.status(200).json({ message: "OK" });
-    // const allConvesiones = await Conversion.find();
-    // res.status(200).json(allConvesiones);
+    const allConvesiones = await Conversion.find();
+    res.status(200).json(allConvesiones);
   } catch (error) {
     res.status(400).json({ error: true, message: error });
   }
