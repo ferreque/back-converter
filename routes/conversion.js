@@ -1,6 +1,5 @@
 const router = require("express").Router();
-
-const Conversion = require("../models/conversions.js");
+const Conversion = require("../models/conversions");
 router
   .get("/all", async (req, res) => {
     console.log("GET /data/all");

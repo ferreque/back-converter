@@ -16,9 +16,13 @@ mongoose
 
 const cors = require("cors");
 app.use(cors());
+let corsOptions = {
+  origin: "https://localhost:3000",
+  optionSuccessStatus: 200,
+};
 const dataRoutes = require("./routes/conversion");
 
-app.use("/data", dataRoutes);
+app.use("/data", cors(corsOptions), dataRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ` + PORT);
