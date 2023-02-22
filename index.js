@@ -4,8 +4,8 @@ app.use(express.json());
 require("dotenv").config();
 const cors = require("cors");
 app.use(cors());
-const mongoose = require("mongoose");
 const PORT = process.env.PORT || 8000;
+const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 mongoose
   .connect(process.env.URL_MONGODB, {
@@ -15,10 +15,10 @@ mongoose
   .then(() => console.log("db connection established"))
   .catch((err) => console.log(err));
 
-const MOCK = require("./Mocks/mocks");
+// const MOCK = require("./Mocks/mocks");
 const Conversion = require("./Models/conversions");
 
-app.route("/data").get(async (req, res) => {
+app.route("/").get(async (req, res) => {
   try {
     const allConvesiones = await Conversion.find();
     res.status(200).json(allConvesiones);
