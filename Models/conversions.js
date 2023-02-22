@@ -10,4 +10,5 @@ const conversionSchema = new Schema({
 });
 
 const Conversion = mongoose.model("conversions", conversionSchema);
+
 module.exports = Conversion;
