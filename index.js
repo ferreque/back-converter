@@ -14,12 +14,8 @@ mongoose
   .then(() => console.log("db connection established"))
   .catch((err) => console.log(err));
 
-var cors = require("cors");
+const cors = require("cors");
 app.use(cors());
-let corsOptions = {
-  origin: "https://localhost:4000",
-  optionSuccessStatus: 200,
-};
 const dataRoutes = require("./routes/conversion");
 
 app.use("/data", dataRoutes);
