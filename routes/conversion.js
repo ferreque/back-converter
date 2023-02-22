@@ -4,8 +4,8 @@ router
   .get("/all", async (req, res) => {
     console.log("GET /data/all");
     try {
-      const allData = await Conversion.find();
-      res.status(200).send(allData);
+      // const allData = await Conversion.find();
+      res.status(200).send("allData");
     } catch (error) {
       console.log(error);
       res.status(400).json({ error: true, message: error });
